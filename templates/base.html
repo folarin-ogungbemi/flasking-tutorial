@@ -1,0 +1,30 @@
+<!--html:5 emmet shortcut for html boilerplate-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Flask</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <!-- In order for our html link to work, we nedd to use 
+                a jinja template method of url_for to call the appropriate function.
+                The double curly braces notation contains an expression thats outputing
+                something back to the screen. e.g our href -->
+                <a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a href="{{url_for('contact')}}">Contact</a></li>
+            <li><a href="{{url_for('careers')}}">Careers</a></li>
+        </ul>
+    </nav>
+
+    <!--curly braces with percentages are for statement that control the flow of our template such as for-loop, if-statement, or this block element-->
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>
